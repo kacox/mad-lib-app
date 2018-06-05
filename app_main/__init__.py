@@ -13,6 +13,10 @@ def create_app():
     # create app instance
     app = Flask(__name__)
 
+    # white space control
+    app.jinja_env.trim_blocks = True
+    app.jinja_env.lstrip_blocks = True
+
     # attach routes and custom error pages
     from .default_blueprint import default
     app.register_blueprint(default)

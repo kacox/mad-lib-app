@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- This is a comment -->
+    {% block head %}
+    <meta charset="utf-8">
+
+    {% if title %}
+      <title>Mock Mad Libs - {{ title }}</title>
+    {%+ else %}
+      <title>Mock Mad Libs</title>
+    {% endif %}
+
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block heading %}
+    {% if heading %}
+      <h1>{{ heading }}</h1>
+    {%+ else %}
+      <h1>Mock Mad Libs</h1>
+    {% endif %}
+    {% endblock %}
+
+    {%+ block selector %}
+    {% endblock %}
+
+    {%+ block content %}
+    <p>This is the base template content.</p>
+    {% endblock %}
+  </body>
+</html>
