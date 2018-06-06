@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block selector %}
+
+  {% if selectform %}
+  <form method="POST" action="/">
+    {# CSRF protection #}
+    {{ selectform.hidden_tag() }}
+    {{ selectform.madlib_choice.label }} {{ selectform.madlib_choice }}<br>
+    {{ selectform.submit() }}
+  </form>
+  {% else %}
+  <p>This is where the Mad Lib Selector (2 choices) goes.</p>
+  {% endif %}
+
+{% endblock %}
+
+{% block content %}
+<p>This is where the content will go.</p>
+{% endblock %}
