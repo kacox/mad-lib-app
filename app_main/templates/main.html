@@ -6,8 +6,8 @@
   <form method="POST" action="/">
     {# CSRF protection #}
     {{ selectform.hidden_tag() }}
-    {{ selectform.madlib_choice.label }} {{ selectform.madlib_choice }}<br>
-    {{ selectform.submit() }}
+    <p>{{ selectform.madlib_choice.label }} {{ selectform.madlib_choice }}</p>
+    <p>{{ selectform.submit() }}</p>
   </form>
   {% else %}
   <p>This is where the Mad Lib Selector (2 choices) goes.</p>
@@ -16,5 +16,7 @@
 {% endblock %}
 
 {% block content %}
-<p>This is where the content will go.</p>
+<p>Select one of two mad libs to fill in.</p>
+<p><b>Mad Lib 1</b>: A single sentence mad lib.</p>
+<p><b>Mad Lib 2</b>: A short story mad lib.</p>
 {% endblock %}

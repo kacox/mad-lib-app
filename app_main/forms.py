@@ -3,7 +3,8 @@ Web forms for the application.
 """
 
 from flask_wtf import FlaskForm
-from wtforms import SelectField, SubmitField
+from wtforms import SelectField, SubmitField, StringField
+from wtforms.validators import DataRequired
 
 
 class MadLibSelector(FlaskForm):
@@ -17,7 +18,12 @@ class MadLibSelector(FlaskForm):
 class MadLibOne(FlaskForm):
     """
     """
-    pass
+    adj1 = StringField('Adjective 1', validators=[DataRequired()])
+    adj2 = StringField('Adjective 2', validators=[DataRequired()])
+    verb1 = StringField('Verb', validators=[DataRequired()])
+    adj3 = StringField('Adjective 3', validators=[DataRequired()])
+    adj4 = StringField('Adjective 4', validators=[DataRequired()])
+    submit = SubmitField('Create Mad Lib')
 
 
 class MadLibTwo(FlaskForm):

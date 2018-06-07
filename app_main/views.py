@@ -22,7 +22,22 @@ def index():
 
 @default.route('/mlib1', methods=['GET', 'POST'])
 def mlib1():
-    return render_template('base.html', title="Mad Lib 1", heading='Mad Lib 1')
+    form = forms.MadLibOne()
+    if form.validate_on_submit():
+        # Successful POST request; take data
+        adj1 = form.adj1.data
+        adj2 = form.adj2.data
+        verb1 = form.verb1.data
+        adj3 = form.adj3.data
+        adj4 = form.adj4.data
+        entry_list = [adj1, adj2, verb1, adj3, adj4]
+
+        # Show filled out mad lib
+        return render_template('madlib1-completed.html', entry_list=entry_list)
+
+    # Form not submitted    
+    return render_template('madlib1.html', title="Mad Lib 1",
+                            heading='Mad Lib 1', form=form)
 
 
 @default.route('/mlib2', methods=['GET', 'POST'])
