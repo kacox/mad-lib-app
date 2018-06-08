@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="finished-madlib">
+  <p>I once knew a {{ entry_list[0] }} man named {{ entry_list[1] }}. He loved
+    to tell {{ entry_list[2] }} jokes. </p>
+  <p>One day he told a {{ entry_list[2] }} joke to the Arch Duchess of
+    {{ entry_list[3] }}. She thought his joke was bad, so she forbade him from
+    ever telling jokes again and banished him to the {{ entry_list[4] }} for
+    {{ entry_list[5] }} years. He took {{ entry_list[6] }} as his only food
+    source.</p>
+  <p>So {{ entry_list[1] }} lived in the {{ entry_list[4] }}, eating only
+    {{ entry_list[6] }}, until one day a {{ entry_list[7] }} fell from the sky
+    and hit him on the head, killing him. And that was the end of
+    {{ entry_list[1] }}.</p>
+</div>
+
+<div class="return-to-previous">
+  <a href="/mlib2">Try again</a>
+</div>
+{% endblock %}

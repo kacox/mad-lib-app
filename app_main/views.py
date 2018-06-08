@@ -35,11 +35,24 @@ def mlib1():
         # Show filled out mad lib
         return render_template('madlib1-completed.html', entry_list=entry_list)
 
-    # Form not submitted    
+    # Form not submitted
     return render_template('madlib1.html', title="Mad Lib 1",
                             heading='Mad Lib 1', form=form)
 
 
 @default.route('/mlib2', methods=['GET', 'POST'])
 def mlib2():
-    return render_template('base.html', title="Mad Lib 2", heading='Mad Lib 2')
+    form = forms.MadLibTwo()
+    if form.validate_on_submit():
+        # Successful POST request; take data
+        entry_list = []
+        for field in form:
+            if field != True:
+                entry_list.append(field.data)
+
+        # Show filled out mad lib
+        return render_template('madlib2-completed.html', entry_list=entry_list)
+
+    # Form not submitted
+    return render_template('madlib2.html', title="Mad Lib 2",
+                            heading='Mad Lib 2', form=form)

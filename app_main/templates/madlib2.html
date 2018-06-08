@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  {% if form %}
+  <form method="POST" action="/mlib2">
+    {# CSRF protection #}
+    {{ form.hidden_tag() }}
+    <p>{{ form.adj1.label }} {{ form.adj1 }}<br>
+      {{ form.name.label }} {{ form.name }}<br>
+      {{ form.adj2.label }} {{ form.adj2 }}<br>
+      {{ form.place.label }} {{ form.place }}<br>
+      {{ form.place2.label }} {{ form.place2 }}<br>
+      {{ form.number.label }} {{ form.number }}<br>
+      {{ form.foodstuff.label }} {{ form.foodstuff }}<br>
+      {{ form.object1.label }} {{ form.object1 }}<br>
+    <p>{{ form.submit() }}</p>
+  </form>
+  {% else %}
+  <p>There should be form fields here.</p>
+  {% endif %}
+
+<div class="return-to-previous">
+  <a href="/">Return to main page</a>
+</div>
+{% endblock %}
