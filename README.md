@@ -9,7 +9,8 @@ mad libs the user can choose from. This application was meant as practice.
 ## Files
 ```
 root
-|- mad-lib-app.py : Main application file (run from here)  
+|- mad-lib-app.py : Main application file (run from here)
+|- requirements.txt : Required packages and versions for application
 |- .gitignore
 |- app_main/
     |- __init__.py
